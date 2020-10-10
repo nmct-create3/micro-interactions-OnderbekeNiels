@@ -1,3 +1,6 @@
+
+
+
 function handleFloatingLabel() {}
 
 function handlePasswordSwitcher() {
@@ -10,7 +13,6 @@ function handlePasswordSwitcher() {
     console.log("jow");
   });
 }
-
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script loaded!");
   handleFloatingLabel();
