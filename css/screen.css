@@ -526,6 +526,38 @@ input::placeholder {
 \*------------------------------------*/
 
 /*
+    Component: Like
+    ---
+*/
+
+.c-like{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-like__symbol{
+  width: 72px;
+  fill: var(--global-color-neutral-x-light);
+}
+
+.c-like__symbol:active{
+  width: 54px;
+  fill: #D80027 ;
+  animation: rotation 0.5s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*
     Component: Logo
     ---
     Website main logo
