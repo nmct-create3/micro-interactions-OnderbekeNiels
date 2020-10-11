@@ -73,8 +73,8 @@
   --global-input-focus-boxShadow: 0 0 0 3px
     var(--global-input-focus-boxShadowColor);
 
-  --global-color-error: #FF3333;
-  --global-input-error-focus-boxShadow: 0 0 0 3px #FF33332d;
+  --global-color-error: #ff3333;
+  --global-input-error-focus-boxShadow: 0 0 0 3px #ff33332d;
 }
 
 /*------------------------------------*\
@@ -616,6 +616,14 @@ input::placeholder {
   align-items: center;
 }
 
+.c-form-field--floating{
+  position: relative;
+}
+
+.c-form-field:focus-within .c-label--floating {
+  transform: translateY(-24px);
+}
+
 /*
     Component: Input
     ---
@@ -651,12 +659,11 @@ input::placeholder {
   box-shadow: var(--input-boxShadow, var(--global-input-focus-boxShadow));
 }
 
-.has-error{
+.has-error {
   --label-color: var(--global-color-error);
   --input-borderColor: var(--global-color-error);
   --input-boxShadow: var(--global-input-error-focus-boxShadow);
 }
-
 
 /*
 Input password with toggle checkbox on top of it needs
@@ -689,6 +696,22 @@ more padding on the right to avoid overlap
 
 .c-label--option {
   padding-bottom: 0;
+}
+
+.c-label--floating{
+  position: absolute;
+  top: 12px;
+  left: 8px;
+  padding: 4px 8px;
+  will-change: transform;
+  transform: translateY( 0 );
+  transition: transform 200ms ease-in-out;
+  box-shadow: 0 0 4px 4px rgba(255,255,255,0.8);
+  background: white;
+}
+
+.is-floating{
+  transform: translateY(-24px);
 }
 
 /*

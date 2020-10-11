@@ -124,7 +124,40 @@ const removeError = function (classObject) {
   classObject.classList.remove("has-error");
 };
 
+const listenToEvents = function(){
+  email.input.addEventListener("focusout", function(){
+      if(isEmpty(email.input.value)){
+          removeIsFloating(email.label);
+      }
+      else{
+          addIsFloating(email.label);
+      }
+  })
+
+  password.input.addEventListener("focusout", function(){
+    if(isEmpty(password.input.value)){
+        removeIsFloating(password.label);
+    }
+    else{
+        addIsFloating(password.label);
+    }
+})
+}
+
+const addIsFloating = function(formField){
+  formField.classList.add('is-floating');
+  console.log("adding is-floating");
+}
+
+const removeIsFloating = function(formField){
+  formField.classList.remove('is-floating');
+  console.log("deleting is-floating");
+}
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Script loaded!");
   getDomElements();
+  listenToEvents();
 });
